@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELVA Beauty Academy | Presentación</title>
+
+    <meta name="description" content="Conocé ELVA Beauty Academy y nuestra propuesta de formación profesional.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <!-- CSS ORIGINAL DE ELVA -->
+    <link rel="stylesheet" href="css/style.css">
+<style>
+
+
+/* =========================================
+   ELVA - FAQ EDITORIAL
+========================================= */
+
+.elva-faq {
+    width: 100%;
+    padding: 110px 7%;
+    background: #EAE0D5;
+    color: #30251F;
+}
+
+.elva-faq-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ENCABEZADO */
+
+.elva-faq-header {
+    max-width: 700px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.elva-faq-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #A17C60;
+}
+
+.elva-faq-header h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(40px, 5vw, 62px);
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.elva-faq-header h2 span {
+    color: #A17C60;
+    font-style: italic;
+}
+
+.elva-faq-header p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #706157;
+}
+
+/* LISTADO */
+
+.elva-faq-list {
+    max-width: 900px;
+    margin: auto;
+    border-top: 1px solid rgba(48,37,31,.2);
+}
+
+.elva-faq-item {
+    border-bottom: 1px solid rgba(48,37,31,.2);
+}
+
+.elva-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 45px 1fr 30px;
+    align-items: center;
+    gap: 15px;
+    padding: 27px 10px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #30251F;
+
+    transition: .3s ease;
+}
+
+.elva-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.elva-faq-item summary:hover {
+    color: #A17C60;
+}
+
+.elva-faq-item summary span {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 23px;
+    color: #A17C60;
+}
+
+.elva-faq-item summary b {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    transition: transform .35s ease;
+}
+
+.elva-faq-item[open] summary b {
+    transform: rotate(45deg);
+}
+
+/* RESPUESTAS */
+
+.elva-faq-answer {
+    padding: 0 55px 25px;
+    animation: faqReveal .4s ease;
+}
+
+.elva-faq-answer p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.9;
+    font-weight: 300;
+    color: #706157;
+    max-width: 750px;
+    margin: 0;
+}
+
+@keyframes faqReveal {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CONTACTO */
+
+.elva-faq-contact {
+    max-width: 900px;
+    margin: 75px auto 0;
+    padding: 38px 40px;
+    background: #30251F;
+    color: #F3EDE6;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.elva-faq-contact span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #C5A486;
+}
+
+.elva-faq-contact h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 29px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.elva-faq-contact p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #D4C8BE;
+    margin: 0;
+}
+
+.elva-faq-button {
+    padding: 17px 23px;
+    background: #C5A486;
+    color: #30251F;
+    text-decoration: none;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+
+    transition: .35s ease;
+}
+
+.elva-faq-button:hover {
+    background: #F3EDE6;
+    transform: translateY(-4px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .elva-faq {
+        padding: 75px 6%;
+    }
+
+    .elva-faq-header {
+        margin-bottom: 40px;
+    }
+
+    .elva-faq-item summary {
+        grid-template-columns: 30px 1fr 25px;
+        gap: 10px;
+        padding: 22px 0;
+        font-size: 13px;
+    }
+
+    .elva-faq-item summary span {
+        font-size: 19px;
+    }
+
+    .elva-faq-answer {
+        padding: 0 40px 22px;
+    }
+
+    .elva-faq-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px 23px;
+        margin-top: 50px;
+    }
+
+    .elva-faq-contact h3 {
+        font-size: 25px;
+    }
+
+    .elva-faq-button {
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }
+}
+/* =========================================
+   ELVA - TITULO HERO
+========================================= */
+
+.elva-hero-title {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+    color: #fff;
+}
+
+.elva-hero-subtitle {
+    display: block;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 5px;
+    font-weight: 600;
+}
+
+.elva-hero-title h1 {
+    margin: 0;
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(38px, 6vw, 76px);
+    font-weight: 500;
+    line-height: 1.08;
+}
+
+.elva-hero-title p {
+    margin: 24px auto;
+    max-width: 600px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.elva-hero-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 15px 30px;
+    background: #C5A486;
+    color: #30251F;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.elva-hero-btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .elva-hero-title {
+        width: 92%;
+    }
+
+    .elva-hero-title h1 {
+        font-size: 42px;
+    }
+
+    .elva-hero-title p {
+        font-size: 14px;
+        margin: 18px auto;
+    }
+
+    .elva-hero-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+}
+
+/* =========================================
+   ELVA - FOOTER SCROLL REVEAL
+========================================= */
+
+.elva-footer {
+    opacity: 0;
+    transform: translateY(70px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+.elva-footer.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   HERO - ZOOM LENTO DEL FONDO
+========================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Fondo con acercamiento progresivo */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: inherit;
+    background-position: center;
+    background-size: cover;
+
+    transform: scale(1);
+    animation: heroSlowZoom 20s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes heroSlowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+
+
+/* =========================================
+   ELVA - HERO SCROLL CINEMATIC
+========================================= */
+
+.elva-hero-title {
+    will-change: transform, opacity;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    transition: none;
+}
+/* Oculto en PC */
+.navigation .nav-link {
+    display: none;
+}
+
+/* Visible solamente en móviles */
+@media (max-width: 768px) {
+    .navigation .nav-link {
+        display: inline-block;
+    }
+}
+
+</style>
+</head>
+
+ 
+
+  
+
+<body>
+
+  <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">ELVA</span>
+            <span class="preloader-subtitle">MAKEUP ACADEMY</span>
+            <div class="preloader-line"></div>
+        </div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="#inicio" class="brand" aria-label="ELVA Makeup Academy - Inicio">
+
+                <span class="brand-name">ELVA</span>
+
+                <span class="brand-subtitle">
+                    MAKEUP ACADEMY
+                </span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+            <nav class="navigation" id="navigation">
+                <a href="index.html" class="nav-link active">Volver al inicio</a>
+            </nav>
+
+
+            <!-- HEADER ACTION -->
+            <a href="index.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-cta">
+
+                <span> Volver Al Inicio</span>
+
+                <span class="cta-arrow">↗</span>
+
+            </a>
+
+
+            <!-- MOBILE BUTTON -->
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="navigation">
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="inicio">
+
+
+            <!-- BACKGROUND IMAGE -->
+            <div class="hero-image-wrapper">
+
+                <img
+                    src="assets/img/4K.jpg"
+                    alt="Maquillaje profesional y belleza editorial de ELVA Makeup Academy"
+                    class="hero-image"
+                    fetchpriority="high"
+                >
+
+            </div>
+
+<!-- HERO TITLE -->
+<div class="elva-hero-title">
+    <span class="elva-hero-subtitle">ELVA BEAUTY ACADEMY</span>
+
+    <h1>
+        Transformá tu pasión<br>
+        en tu profesión
+    </h1>
+
+    <p>
+        “¿Tenés dudas sobre nuestros cursos? Estamos acá para orientarte, ayudarte a elegir tu formación y acompañarte en cada paso de tu camino en el mundo de la belleza.”
+    </p>
+
+    <a href="#cursos" class="elva-hero-btn">
+        DESCUBRÍ NUESTROS CURSOS
+    </a>
+</div>
+
+
+                <!-- HERO BOTTOM -->
+                <div class="hero-bottom">
+
+                    <div class="hero-bottom-item">
+
+                        <span class="hero-bottom-text">
+                            BEAUTY
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-bottom-center">
+
+                        <span>
+                            EL ARTE DE DESCUBRIR TU POTENCIAL
+                        </span>
+
+                    </div>
+
+
+                    <a href="#filosofia" class="scroll-indicator">
+
+                        <span>SCROLL TO DISCOVER</span>
+
+                        <span class="scroll-arrow">↓</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+       
+        </section>
+
+<!-- =========================================
+     ELVA - PREGUNTAS FRECUENTES
+========================================= -->
+
+<section class="elva-faq" id="preguntas">
+
+    <div class="elva-faq-container">
+
+        <!-- ENCABEZADO -->
+        <div class="elva-faq-header">
+
+            <span class="elva-faq-eyebrow">
+                ESTAMOS PARA AYUDARTE
+            </span>
+
+            <h2>
+                Preguntas <span>frecuentes.</span>
+            </h2>
+
+            <p>
+                Queremos que conozcas cada detalle antes de comenzar.
+                Encontrá aquí las respuestas a las consultas más
+                habituales sobre nuestras formaciones.
+            </p>
+
+        </div>
+
+        <!-- PREGUNTAS -->
+        <div class="elva-faq-list">
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>01</span>
+                    ¿Qué cursos ofrece ELVA Beauty Academy?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        Ofrecemos propuestas de formación relacionadas
+                        con el mundo de la belleza, el maquillaje y el
+                        desarrollo de habilidades profesionales.
+                        Podés consultar nuestro catálogo para conocer
+                        las formaciones disponibles.
+                    </p>
+                </div>
+            </details>
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>02</span>
+                    ¿Cómo puedo acceder a un curso?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        Elegí el curso que te interesa en nuestra sección
+                        de formaciones y comunicate con nosotros por
+                        WhatsApp o Instagram. Te brindaremos información
+                        sobre los pasos para inscribirte.
+                    </p>
+                </div>
+            </details>
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>03</span>
+                    ¿Necesito tener experiencia previa?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        Depende de la formación elegida. Consultanos
+                        sobre los requisitos de cada curso para saber
+                        si está pensado para principiantes o personas
+                        con conocimientos previos.
+                    </p>
+                </div>
+            </details>
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>04</span>
+                    ¿Cómo conozco el precio de cada curso?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        Los precios, promociones y opciones de pago
+                        pueden variar según la formación. Escribinos
+                        y te compartiremos la información actualizada.
+                    </p>
+                </div>
+            </details>
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>05</span>
+                    ¿Los cursos son presenciales o virtuales?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        La modalidad depende de cada formación.
+                        Contactanos para confirmar si el curso que
+                        elegiste se realiza de manera presencial,
+                        virtual o bajo otra modalidad.
+                    </p>
+                </div>
+            </details>
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>06</span>
+                    ¿Recibo un certificado al finalizar?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        Consultá las condiciones de certificación
+                        correspondientes al curso que te interesa.
+                        Nuestro equipo podrá brindarte los detalles.
+                    </p>
+                </div>
+            </details>
+
+            <details class="elva-faq-item">
+                <summary>
+                    <span>07</span>
+                    ¿Cómo puedo recibir más información?
+                    <b>+</b>
+                </summary>
+                <div class="elva-faq-answer">
+                    <p>
+                        Podés comunicarte directamente con ELVA
+                        Beauty Academy mediante WhatsApp o Instagram.
+                        Estamos disponibles para ayudarte a elegir
+                        la formación adecuada para vos.
+                    </p>
+                </div>
+            </details>
+
+        </div>
+
+        <!-- CONTACTO FINAL -->
+        <div class="elva-faq-contact">
+
+            <div>
+                <span>¿TENÉS OTRA CONSULTA?</span>
+                <h3>Estamos para acompañarte.</h3>
+                <p>
+                    Escribinos y te ayudaremos a encontrar
+                    la información que necesitás.
+                </p>
+            </div>
+
+            <a
+                href="https://wa.me/595XXXXXXXXX?text=Hola%2C%20quisiera%20consultar%20sobre%20los%20cursos%20de%20ELVA%20Beauty%20Academy."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="elva-faq-button">
+
+                CONSULTAR POR WHATSAPP ↗
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER — ELVA BEAUTY ACADEMY
+========================================= -->
+
+<footer class="elva-footer">
+
+    <div class="footer-main">
+
+        <!-- MARCA -->
+        <div class="footer-brand">
+
+            <span class="footer-eyebrow">
+                BEAUTY • ART • EDUCATION
+            </span>
+
+            <h2>
+                ELVA<span>.</span>
+            </h2>
+
+            <p>
+                El arte de aprender, crear y resaltar
+                la belleza en cada persona.
+            </p>
+
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="footer-column">
+
+            <h3>EXPLORAR</h3>
+
+            <a href="index.html">Volver Al Inicio</a>
+            
+
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-column">
+
+            <h3>Politica</h3>
+
+            
+          <a href="privacidad.html">Política de Privacidad</a>
+<a href="terminos.html">Términos y Condiciones</a>
+<a href="aviso-legal.html">Aviso Legal</a>
+
+        </div>
+
+        <!-- REDES -->
+        <div class="footer-column footer-social">
+
+            <h3>SEGUINOS</h3>
+
+            <a href="https://www.instagram.com/elvabrusich/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram ↗
+            </a>
+
+            <a href="#contacto">
+                WhatsApp ↗
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FRASE EDITORIAL -->
+    <div class="footer-statement">
+        <span>THE ART OF BEAUTY</span>
+    </div>
+
+    <!-- PIE INFERIOR -->
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="footer-year"></span> ELVA BEAUTY ACADEMY.
+            TODOS LOS DERECHOS RESERVADOS.
+        </p>
+
+        <a href="#inicio" class="footer-back-top">
+            VOLVER ARRIBA
+            <span>↑</span>
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const title = document.querySelector(".elva-player-title");
+    const player = document.querySelector(".elva-player");
+
+    setTimeout(() => {
+        title?.classList.add("show");
+    }, 300);
+
+    setTimeout(() => {
+        player?.classList.add("show");
+    }, 700);
+
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const footer = document.querySelector(".elva-footer");
+
+    if (!footer) return;
+
+    const footerObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                footer.classList.add("footer-visible");
+
+                footerObserver.unobserve(footer);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.08
+    });
+
+    footerObserver.observe(footer);
+
+    // AÑO AUTOMÁTICO
+    const year = document.getElementById("footer-year");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+});
+
+/* =========================================
+   ELVA - HERO SCROLL ZOOM
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const hero = document.querySelector(".hero");
+    const title = document.querySelector(".elva-hero-title");
+
+    if (!hero || !title) return;
+
+    let ticking = false;
+
+    function updateHeroEffect() {
+
+        const heroHeight = hero.offsetHeight;
+        const scroll = window.scrollY;
+
+        const progress = Math.min(
+            Math.max(scroll / (heroHeight * 0.65), 0),
+            1
+        );
+
+        // TEXTO SE AGRANDA
+        const scale = 1 + (progress * 0.65);
+
+        // TEXTO DESAPARECE
+        const opacity = 1 - progress;
+
+        // TEXTO SUBE
+        const moveY = progress * -35;
+
+        title.style.transform = `
+            translate(-50%, calc(-50% + ${moveY}px))
+            scale(${scale})
+        `;
+
+        title.style.opacity = opacity;
+
+        ticking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeroEffect);
+            ticking = true;
+        }
+
+    }, { passive: true });
+
+    updateHeroEffect();
+
+});
+
+</script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

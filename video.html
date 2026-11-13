@@ -1,0 +1,883 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ELVA Beauty Academy | Presentación</title>
+
+    <meta name="description" content="Conocé ELVA Beauty Academy y nuestra propuesta de formación profesional.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+    <!-- CSS ORIGINAL DE ELVA -->
+    <link rel="stylesheet" href="css/style.css">
+<style>
+/* =========================================
+   ELVA - TÍTULO Y REPRODUCTOR
+========================================= */
+
+.elva-player-title {
+    position: relative;
+    z-index: 5;
+
+    font-family: 'Cormorant Garamond', serif;
+font-size: 56px;
+font-weight: 600;
+letter-spacing: 3px;
+text-align: center;
+text-transform: uppercase;
+
+    color: #30251F;
+
+    margin: -85px auto 0;
+    padding: 0;
+
+    transform: translateY(-56px);
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.elva-player-title.show {
+    opacity: 1;
+}
+
+#cursoTitulo {
+    display: none !important;
+}
+
+/* REPRODUCTOR */
+.elva-player {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+
+    margin: -45px auto 0;
+
+    overflow: hidden;
+    border-radius: 15px;
+    background: #000;
+
+    transform: none;
+}
+
+/* YOUTUBE */
+.elva-player iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    .elva-player {
+        max-width: 750px;
+    }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+    .elva-player {
+        width: 100%;
+        margin-top: -70px;
+        border-radius: 10px;
+    }
+}
+
+/* =========================================
+   ELVA - HERO SCROLL REVEAL
+========================================= */
+
+.elva-player {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.elva-player.show {
+    opacity: 1;
+}
+
+
+/* ===========================================================================================================
+   ELVA - BLOQUE INFORMACIÓN DEL VIDEO
+========================================= */
+
+.elva-video-info {
+    position: relative;
+    width: 100%;
+    padding: 100px 7%;
+    background: #F3EDE6;
+    color: #30251F;
+    overflow: hidden;
+}
+
+.elva-video-info-inner {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 100px;
+    align-items: start;
+}
+
+/* ETIQUETAS */
+
+.elva-info-eyebrow {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #A17C60;
+    margin-bottom: 25px;
+}
+
+/* DESCRIPCIÓN */
+
+.elva-video-description h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(38px, 4.5vw, 58px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 30px;
+}
+
+.elva-video-description h2 span {
+    display: block;
+    font-style: italic;
+    color: #A17C60;
+}
+
+.elva-video-description p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    font-weight: 300;
+    color: #62564D;
+    margin-bottom: 20px;
+    max-width: 550px;
+}
+
+/* BENEFICIOS */
+
+.elva-video-benefits {
+    padding-top: 8px;
+}
+
+.elva-benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 22px;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(48, 37, 31, .15);
+}
+
+.elva-benefit-number {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 29px;
+    color: #A17C60;
+    line-height: 1;
+}
+
+.elva-benefit h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 0 8px;
+}
+
+.elva-benefit p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #71635A;
+    margin: 0;
+}
+
+/* CONTACTO WHATSAPP */
+
+.elva-video-contact {
+    max-width: 1250px;
+    margin: 85px auto 0;
+    padding: 40px 45px;
+    background: #30251F;
+    color: #F3EDE6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.elva-contact-text span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #C5A486;
+}
+
+.elva-contact-text h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 12px 0;
+}
+
+.elva-contact-text p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #D4C8BE;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.elva-whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 18px 25px;
+    background: #C5A486;
+    color: #30251F;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: .35s ease;
+}
+
+.elva-whatsapp-btn:hover {
+    background: #F3EDE6;
+    transform: translateY(-4px);
+}
+
+.elva-whatsapp-arrow {
+    font-size: 20px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .elva-video-info {
+        padding: 75px 7%;
+    }
+
+    .elva-video-info-inner {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .elva-video-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 25px;
+        margin-top: 55px;
+    }
+
+    .elva-contact-text h3 {
+        font-size: 27px;
+    }
+
+    .elva-whatsapp-btn {
+        width: 100%;
+        white-space: normal;
+    }
+}
+/* ===========================================================================================================
+
+========================================= */
+
+
+.elva-footer {
+    opacity: 0;
+    transform: translateY(70px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.22, 1, .36, 1);
+}
+
+.elva-footer.footer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Oculto en PC */
+.navigation .nav-link {
+    display: none;
+}
+
+/* Visible solamente en móviles */
+@media (max-width: 768px) {
+    
+    .navigation .nav-link {
+        display: inline-block;
+    }
+}
+@media (max-width: 768px) {
+    .elva-player-title {
+        font-size: 30px;
+        letter-spacing: 1px;
+        line-height: 1.15;
+        padding: 0 12px;
+        margin-top: 35px;
+    }
+}
+@media (max-width: 768px) {
+    .elva-player {
+        position: relative;
+        top: 35px;
+    }
+}
+@media (max-width: 768px) {
+
+    .elva-player {
+        width: 120%;
+        max-width: none;
+        margin-left: -10%;
+        position: relative;
+        top: 35px;
+    }
+
+    .elva-player video {
+        width: 100%;
+        height: 350px;
+        min-height: 350px;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+}@media (max-width: 768px) {
+    .elva-player-title {
+        position: relative;
+        top: -85px;
+        font-size: 38px;
+        letter-spacing: 1.5px;
+        line-height: 1.1;
+        padding: 0 10px;
+    }
+}
+
+
+
+</style>
+</head>
+
+ 
+
+  
+
+<body>
+
+  <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-logo">ELVA</span>
+            <span class="preloader-subtitle">MAKEUP ACADEMY</span>
+            <div class="preloader-line"></div>
+        </div>
+    </div>
+
+
+    
+    <!-- HEADER -->
+    <header class="header" id="header">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+            <a href="#inicio" class="brand" aria-label="ELVA Makeup Academy - Inicio">
+
+                <span class="brand-name">ELVA</span>
+
+                <span class="brand-subtitle">
+                    MAKEUP ACADEMY
+                </span>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+            <nav class="navigation" id="navigation">
+                <a href="index.html" class="nav-link active">Volver al inicio</a>
+            </nav>
+
+
+            <!-- HEADER ACTION -->
+            <a href="index.html"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="header-cta">
+
+                <span> Volver Al Inicio</span>
+
+                <span class="cta-arrow">↗</span>
+
+            </a>
+
+
+            <!-- MOBILE BUTTON -->
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="navigation">
+
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section class="hero" id="inicio">
+
+
+            <!-- BACKGROUND IMAGE -->
+            <div class="hero-image-wrapper">
+
+                <img
+                    src="assets/img/4K.jpg"
+                    alt="Maquillaje profesional y belleza editorial de ELVA Makeup Academy"
+                    class="hero-image"
+                    fetchpriority="high"
+                >
+
+            </div>
+
+
+       
+<!-- HERO CONTENT -->
+<div class="hero-container">
+
+    <h2 class="elva-player-title">
+        CONOCÉ ELVA BEAUTY ACADEMY
+    </h2>
+
+<div class="video-page">
+
+    <h1 id="cursoTitulo">Cargando curso...</h1>
+
+    <div class="elva-player">
+        <iframe
+            id="elvaVideo"
+            width="100%"
+            height="100%"
+            src=""
+            title="Video del curso"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const titulo = params.get("titulo");
+    const enlace = params.get("video");
+
+    const iframe = document.getElementById("elvaVideo");
+    const tituloElemento = document.getElementById("cursoTitulo");
+
+    tituloElemento.textContent = titulo || "Curso ELVA";
+
+    function obtenerEmbed(url) {
+
+        try {
+            const parsed = new URL(url);
+            let id = "";
+
+            if (parsed.hostname === "youtu.be") {
+                id = parsed.pathname.slice(1);
+            } else if (
+                parsed.hostname.includes("youtube.com")
+            ) {
+                id = parsed.searchParams.get("v");
+
+                if (!id && parsed.pathname.startsWith("/embed/")) {
+                    id = parsed.pathname.split("/")[2];
+                }
+            }
+
+            if (!/^[a-zA-Z0-9_-]{11}$/.test(id || "")) {
+                return null;
+            }
+
+            return "https://www.youtube-nocookie.com/embed/" + id;
+
+        } catch {
+            return null;
+        }
+    }
+
+    const embed = obtenerEmbed(enlace || "");
+
+    if (embed) {
+        iframe.src = embed;
+    } else {
+        tituloElemento.textContent = "Video no disponible";
+    }
+
+});
+</script>
+
+
+</div>
+
+
+
+
+
+                <!-- HERO BOTTOM -->
+                <div class="hero-bottom">
+
+                    <div class="hero-bottom-item">
+
+                        <span class="hero-bottom-text">
+                            BEAUTY
+                        </span>
+
+                    </div>
+
+
+                    <div class="hero-bottom-center">
+
+                        <span>
+                            EL ARTE DE DESCUBRIR TU POTENCIAL
+                        </span>
+
+                    </div>
+
+
+                    <a href="#filosofia" class="scroll-indicator">
+
+                        <span>SCROLL TO DISCOVER</span>
+
+                        <span class="scroll-arrow">↓</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+       
+        </section>
+
+
+<!-- =========================================
+     ELVA - PRESENTACIÓN DEL VIDEO
+========================================= -->
+
+<section class="elva-video-info">
+
+    <div class="elva-video-info-inner">
+
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="elva-video-description">
+
+            <span class="elva-info-eyebrow">
+                CONOCÉ NUESTRA ESENCIA
+            </span>
+
+            <h2>
+                Tu talento merece
+                <span>un nuevo comienzo.</span>
+            </h2>
+
+            <p>
+                ELVA Beauty Academy es un espacio dedicado a la
+                formación en belleza, donde la pasión, la creatividad
+                y el aprendizaje se unen para desarrollar nuevas
+                habilidades y oportunidades profesionales.
+            </p>
+
+            <p>
+                En este video te invitamos a conocer nuestra propuesta,
+                descubrir lo que ofrecemos y acercarte al mundo de la
+                belleza desde una experiencia de aprendizaje.
+            </p>
+
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="elva-video-benefits">
+
+            <span class="elva-info-eyebrow">
+                ¿POR QUÉ VER EL VIDEO?
+            </span>
+
+            <div class="elva-benefit">
+                <span class="elva-benefit-number">01</span>
+                <div>
+                    <h3>Conocé ELVA</h3>
+                    <p>Descubrí nuestra academia y nuestra propuesta de formación.</p>
+                </div>
+            </div>
+
+            <div class="elva-benefit">
+                <span class="elva-benefit-number">02</span>
+                <div>
+                    <h3>Descubrí tus posibilidades</h3>
+                    <p>Conocé las oportunidades de aprendizaje y desarrollo en belleza.</p>
+                </div>
+            </div>
+
+            <div class="elva-benefit">
+                <span class="elva-benefit-number">03</span>
+                <div>
+                    <h3>Elegí tu próximo paso</h3>
+                    <p>Informate y encontrá una formación que acompañe tus objetivos.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="elva-video-contact">
+
+        <div class="elva-contact-text">
+            <span>¿QUERÉS SABER MÁS?</span>
+            <h3>Tu próximo paso puede comenzar hoy.</h3>
+            <p>
+                Conversá con nosotros y recibí más información
+                sobre los cursos, contenidos y propuestas de ELVA.
+            </p>
+        </div>
+
+        <a
+            href="https://wa.me/595XXXXXXXXX?text=Hola%2C%20vi%20el%20video%20de%20ELVA%20Beauty%20Academy%20y%20me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="elva-whatsapp-btn">
+
+            <span>CONVERSAR POR WHATSAPP</span>
+            <span class="elva-whatsapp-arrow">↗</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER — ELVA BEAUTY ACADEMY
+========================================= -->
+
+<footer class="elva-footer">
+
+    <div class="footer-main">
+
+        <!-- MARCA -->
+        <div class="footer-brand">
+
+            <span class="footer-eyebrow">
+                BEAUTY • ART • EDUCATION
+            </span>
+
+            <h2>
+                ELVA<span>.</span>
+            </h2>
+
+            <p>
+                El arte de aprender, crear y resaltar
+                la belleza en cada persona.
+            </p>
+
+        </div>
+
+        <!-- NAVEGACIÓN -->
+        <div class="footer-column">
+
+            <h3>EXPLORAR</h3>
+
+            <a href="index.html">Inicio</a>
+            
+
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="footer-column">
+
+            <h3>CONTACTO</h3>
+
+            
+            <a href="informacion-cursos.html">Información sobre cursos</a>
+
+        </div>
+
+        <!-- REDES -->
+        <div class="footer-column footer-social">
+
+            <h3>SEGUINOS</h3>
+
+            <a href="https://www.instagram.com/elvabrusich/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Instagram ↗
+            </a>
+
+            <a href="#contacto">
+                WhatsApp ↗
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FRASE EDITORIAL -->
+    <div class="footer-statement">
+        <span>THE ART OF BEAUTY</span>
+    </div>
+
+    <!-- PIE INFERIOR -->
+    <div class="footer-bottom">
+
+        <p>
+            © <span id="footer-year"></span> ELVA BEAUTY ACADEMY.
+            TODOS LOS DERECHOS RESERVADOS.
+        </p>
+<a href="privacidad.html">Política de Privacidad</a>
+<a href="terminos.html">Términos y Condiciones</a>
+<a href="aviso-legal.html">Aviso Legal</a>
+        <a href="#inicio" class="footer-back-top">
+            VOLVER ARRIBA
+            <span>↑</span>
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+        <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const title = document.querySelector(".elva-player-title");
+    const player = document.querySelector(".elva-player");
+
+    setTimeout(() => {
+        title?.classList.add("show");
+    }, 300);
+
+    setTimeout(() => {
+        player?.classList.add("show");
+    }, 700);
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const info = document.querySelector(".elva-video-info");
+
+    if (!info) return;
+
+    info.style.opacity = "0";
+    info.style.transform = "translateY(55px)";
+    info.style.transition = "opacity 1s ease, transform 1s ease";
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                info.style.opacity = "1";
+                info.style.transform = "translateY(0)";
+                observer.unobserve(info);
+            }
+
+        });
+
+    }, {
+        threshold: 0.12
+    });
+
+    observer.observe(info);
+
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const footer = document.querySelector(".elva-footer");
+
+    if (!footer) return;
+
+    const footerObserver = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                footer.classList.add("footer-visible");
+
+                footerObserver.unobserve(footer);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.08
+    });
+
+    footerObserver.observe(footer);
+
+    // AÑO AUTOMÁTICO
+    const year = document.getElementById("footer-year");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const title = document.querySelector(".elva-player-title");
+
+    if (!title) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                title.classList.add("show-title");
+                observer.unobserve(title);
+            }
+
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    observer.observe(title);
+
+});
+
+</script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
