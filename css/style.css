@@ -1,0 +1,3876 @@
+
+/* =====================================================
+   ELVA MAKEUP ACADEMY
+   HEADER + HERO
+   NEXOWEBPY
+===================================================== */
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+
+    --color-dark: #211c19;
+    --color-dark-soft: #302720;
+
+    --color-champagne: #c4a582;
+    --color-gold: #b99b79;
+
+    --color-nude: #e8dccf;
+    --color-ivory: #f7f3ee;
+    --color-rose: #a88d86;
+
+    --font-title: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --transition: .4s cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+
+    background: var(--color-ivory);
+
+    color: var(--color-dark);
+
+    font-family: var(--font-body);
+
+    overflow-x: hidden;
+
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================
+   PRELOADER
+========================= */
+
+.preloader {
+
+    position: fixed;
+    inset: 0;
+
+    background: var(--color-dark);
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity .8s ease, visibility .8s ease;
+
+}
+
+.preloader.hidden {
+
+    opacity: 0;
+    visibility: hidden;
+
+}
+
+.preloader-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+.preloader-logo {
+
+    font-family: var(--font-title);
+
+    font-size: 65px;
+
+    letter-spacing: 12px;
+
+    color: var(--color-champagne);
+
+}
+
+.preloader-subtitle {
+
+    font-size: 9px;
+
+    letter-spacing: 5px;
+
+    color: var(--color-ivory);
+
+}
+
+.preloader-line {
+
+    width: 100px;
+
+    height: 1px;
+
+    background: var(--color-gold);
+
+    margin-top: 20px;
+
+    animation: loading 1.3s ease infinite;
+
+}
+
+@keyframes loading {
+
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    50% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 100px;
+
+    z-index: 1000;
+
+    transition: var(--transition);
+
+}
+
+.header.scrolled {
+
+    height: 78px;
+
+    background: rgba(33, 28, 25, .94);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 5px 30px rgba(0,0,0,.08);
+
+}
+
+.header-container {
+
+    width: 90%;
+
+    max-width: 1600px;
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* LOGO */
+
+.brand {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 2px;
+
+    color: var(--color-ivory);
+
+    min-width: 145px;
+
+}
+
+.brand-name {
+
+    font-family: var(--font-title);
+
+    font-size: 39px;
+
+    line-height: .9;
+
+    letter-spacing: 7px;
+
+}
+
+.brand-subtitle {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* NAVIGATION */
+
+.navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 39px;
+
+}
+
+.nav-link {
+
+    position: relative;
+
+    color: rgba(255,255,255,.8);
+
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    transition: var(--transition);
+
+}
+
+.nav-link::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -9px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: var(--color-champagne);
+
+    transition: var(--transition);
+
+}
+
+.nav-link:hover,
+.nav-link.active {
+
+    color: var(--color-champagne);
+
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+
+    width: 100%;
+
+}
+
+
+/* HEADER CTA */
+
+.header-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    color: var(--color-ivory);
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    border-bottom: 1px solid rgba(196,165,130,.6);
+
+    padding-bottom: 10px;
+
+    transition: var(--transition);
+}
+
+.header-cta .cta-text {
+    text-transform: uppercase;
+}
+
+.header-cta .cta-arrow {
+    color: var(--color-champagne);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    transition: transform .4s ease;
+}
+
+.header-cta:hover {
+    color: var(--color-champagne);
+    gap: 20px;
+}
+
+.header-cta:hover .cta-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* MOBILE MENU */
+
+.menu-toggle {
+
+    display: none;
+
+    border: 0;
+
+    background: none;
+
+    cursor: pointer;
+
+    width: 35px;
+
+    height: 35px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+}
+
+.menu-toggle span {
+
+    width: 27px;
+
+    height: 1px;
+
+    background: var(--color-ivory);
+
+    transition: var(--transition);
+
+}
+
+.menu-toggle.active span:first-child {
+
+    transform: translateY(4px) rotate(45deg);
+
+}
+
+.menu-toggle.active span:last-child {
+
+    transform: translateY(-4px) rotate(-45deg);
+
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 850px;
+
+    height: 100svh;
+
+    max-height: 1100px;
+
+    overflow: hidden;
+
+    background: var(--color-dark);
+
+    color: var(--color-ivory);
+
+}
+
+
+/* IMAGE */
+
+.hero-image-wrapper {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+}
+
+.hero-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center 35%;
+
+    animation: heroZoom 2s cubic-bezier(.2,.7,.3,1) both;
+
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.12);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
+
+
+/* OVERLAY */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(24,19,17,.88) 0%,
+            rgba(24,19,17,.72) 35%,
+            rgba(24,19,17,.23) 75%,
+            rgba(24,19,17,.12) 100%
+        );
+
+}
+
+
+/* HERO CONTENT */
+
+.hero-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 88%;
+
+    max-width: 1500px;
+
+    height: 100%;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    padding-top: 200px;
+
+}
+
+
+/* EYEBROW */
+
+.hero-eyebrow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 32px;
+
+    color: var(--color-champagne);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+}
+
+.eyebrow-line {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: var(--color-champagne);
+
+}
+.hero-tagline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(9px, 1vw, 12px);
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 1.8;
+    text-transform: uppercase;
+
+    color: #c4a582;
+
+    margin-top: 12px;
+    margin-bottom: 15px;
+
+    text-align: left;
+    opacity: .95;
+}
+
+@media (max-width: 768px) {
+    .hero-tagline {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+        margin-top: 10px;
+        margin-bottom: 12px;
+    }
+}
+
+
+/* =========================================
+   SCROLL REVEAL - ELVA ABOUT
+========================================= */
+
+.elva-about .elva-about-heading,
+.elva-about .elva-about-video,
+.elva-about .elva-about-text,
+.elva-about .elva-about-benefits,
+.elva-about .elva-about-cta {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.2,.7,.2,1);
+}
+
+/* ELEMENTOS VISIBLES */
+
+.elva-about .elva-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RETRASOS */
+
+.elva-about .elva-about-video {
+    transition-delay: .15s;
+}
+
+.elva-about .elva-about-text {
+    transition-delay: .3s;
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    .elva-about .elva-about-heading,
+    .elva-about .elva-about-video,
+    .elva-about .elva-about-text,
+    .elva-about .elva-about-benefits,
+    .elva-about .elva-about-cta {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/*---------------------------------------------------------------------*/
+
+
+
+/* =========================================
+   ELVA BEAUTY ACADEMY
+   SOBRE NOSOTROS - DISEÑO EDITORIAL PREMIUM
+========================================= */
+
+.elva-about {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding: 110px 25px;
+    overflow: hidden;
+    color: #30251F;
+
+    background:
+        radial-gradient(ellipse at 5% 15%, rgba(190,153,119,.22), transparent 35%),
+        radial-gradient(ellipse at 95% 55%, rgba(177,143,110,.18), transparent 32%),
+        radial-gradient(ellipse at 50% 100%, rgba(255,255,255,.9), transparent 45%),
+        linear-gradient(135deg, #eee4d9, #f8f3ec 48%, #e5d8ca);
+}
+
+/* CONTENEDOR */
+
+.elva-about-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* TEXTURA */
+
+.elva-about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: .20;
+
+    background-image:
+        radial-gradient(rgba(130,100,75,.22) .7px, transparent .7px);
+
+    background-size: 9px 9px;
+}
+
+/* CÍRCULOS DECORATIVOS */
+
+.elva-about::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 550px;
+    height: 550px;
+    top: 5%;
+    right: -240px;
+    border: 1px solid rgba(162,124,91,.25);
+    border-radius: 50%;
+    pointer-events: none;
+
+    box-shadow:
+        0 0 0 35px rgba(162,124,91,.035),
+        0 0 0 75px rgba(162,124,91,.025),
+        0 0 0 120px rgba(162,124,91,.02);
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.elva-about-heading {
+    max-width: 750px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.elva-about-eyebrow,
+.elva-about-label {
+    display: inline-block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #a27c5b;
+    margin-bottom: 20px;
+}
+
+.elva-about-heading h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(38px, 6vw, 68px);
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 0 0 22px;
+}
+
+.elva-about-heading h2 span {
+    display: block;
+    font-style: italic;
+    color: #a27c5b;
+}
+
+.elva-about-heading p {
+    max-width: 570px;
+    margin: auto;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #756960;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+========================================= */
+
+.elva-about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 75px;
+    margin-bottom: 110px;
+}
+
+/* IMAGEN */
+
+.elva-about-image {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+    background: #ded4c8;
+}
+
+.elva-about-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+.elva-about-image:hover img {
+    transform: scale(1.04);
+}
+
+/* TEXTO SOBRE IMAGEN */
+
+.elva-about-image-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    padding: 20px;
+    background: rgba(35, 27, 22, .83);
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.elva-about-image-caption span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.elva-about-image-caption small {
+    font-size: 12px;
+    color: #d9c2a8;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   TEXTO SOBRE ELVA
+========================================= */
+
+.elva-about-text {
+    padding: 20px 0;
+}
+
+.elva-about-text h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(35px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin: 0 0 28px;
+}
+
+.elva-about-text h3 em {
+    color: #a27c5b;
+    font-weight: 400;
+}
+
+.elva-about-text > p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.95;
+    color: #71665d;
+    margin-bottom: 17px;
+}
+
+/* AÑO */
+
+.elva-about-year {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-top: 1px solid #d8cabe;
+    margin-top: 35px;
+    padding-top: 25px;
+}
+
+.elva-year-number {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 28px;
+    color: #a27c5b;
+    font-weight: 600;
+}
+
+.elva-about-year div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.elva-about-year strong {
+    font-size: 13px;
+}
+
+.elva-about-year small {
+    font-size: 12px;
+    color: #897d72;
+}
+
+/* =========================================
+   BENEFICIOS
+========================================= */
+
+.elva-about-benefits {
+    position: relative;
+    padding: 75px 55px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.78),
+            rgba(231,218,204,.88)
+        );
+
+    border: 1px solid rgba(162,124,91,.20);
+    box-shadow: 0 20px 60px rgba(75,52,35,.06);
+}
+
+/* ENCABEZADO BENEFICIOS */
+
+.elva-benefits-heading {
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto 55px;
+}
+
+.elva-benefits-heading > span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #a27c5b;
+}
+
+.elva-benefits-heading h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    margin: 15px 0;
+}
+
+.elva-benefits-heading h3 em {
+    color: #a27c5b;
+}
+
+.elva-benefits-heading p {
+    color: #796d63;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* GRID */
+
+.elva-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+/* TARJETAS */
+
+.elva-benefit-card {
+    position: relative;
+    min-height: 245px;
+    padding: 30px 23px;
+    background: rgba(255,255,255,.78);
+    border: 1px solid rgba(162,124,91,.10);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.elva-benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(65,45,30,.09);
+}
+
+.elva-benefit-number {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 13px;
+    color: #b49a81;
+}
+
+.elva-benefit-icon {
+    margin: 20px 0;
+    font-size: 27px;
+    color: #a27c5b;
+}
+
+.elva-benefit-card h4 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0 0 12px;
+}
+
+.elva-benefit-card p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #81766d;
+}
+
+/* =========================================
+   CIERRE / LLAMADA A LA ACCIÓN
+========================================= */
+
+.elva-about-cta {
+    text-align: center;
+    max-width: 780px;
+    margin: 100px auto 0;
+}
+
+.elva-about-cta > span {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #a27c5b;
+}
+
+.elva-about-cta h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(32px, 5vw, 53px);
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 20px 0 30px;
+}
+
+.elva-about-cta h3 em {
+    display: block;
+    color: #a27c5b;
+}
+
+/* BOTÓN */
+
+.elva-about-button {
+    display: inline-block;
+    padding: 17px 28px;
+    background: #30251f;
+    color: #fff;
+    text-decoration: none;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    transition: all .3s ease;
+}
+
+.elva-about-button:hover {
+    background: #a27c5b;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   VIDEO PRESENTACIÓN ELVA
+   PC + TABLET + MÓVIL
+========================================= */
+
+.elva-about-video {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: 570px;
+    overflow: hidden;
+    background: #30251f;
+}
+
+/* ELEMENTO VIDEO */
+
+.elva-about-video video {
+    position: absolute;
+    inset: 0;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* OSCURECIMIENTO INFERIOR */
+
+.elva-about-video::after {
+    content: "";
+    position: absolute;
+    inset: 45% 0 0;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(20, 15, 12, .55)
+    );
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* TEXTO SOBRE VIDEO */
+
+.elva-about-video .elva-about-image-caption {
+    position: absolute;
+    z-index: 3;
+}
+
+/* =========================================
+   DIVISORIA ENTRE SECCIONES
+========================================= */
+
+.elva-section-divider {
+    width: 100%;
+    max-width: 1180px;
+    margin: 85px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.elva-section-divider::before,
+.elva-section-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(162, 124, 91, .65)
+    );
+}
+
+.elva-section-divider::after {
+    background: linear-gradient(
+        to left,
+        transparent,
+        rgba(162, 124, 91, .65)
+    );
+}
+
+.elva-section-divider span {
+    width: 9px;
+    height: 9px;
+    border: 1px solid #a27c5b;
+    transform: rotate(45deg);
+    background: #eee4d9;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .elva-about-content {
+        gap: 35px;
+    }
+
+    .elva-about-image {
+        height: 480px;
+    }
+
+    .elva-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .elva-about-benefits {
+        padding: 55px 30px;
+    }
+
+    .elva-about-video {
+        height: 480px;
+    }
+}
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .elva-about {
+        padding: 75px 18px;
+    }
+
+    .elva-about-heading {
+        margin-bottom: 45px;
+    }
+
+    .elva-about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 70px;
+    }
+
+    .elva-about-image {
+        height: 420px;
+    }
+
+    .elva-about-text {
+        padding: 0;
+    }
+
+    /* BENEFICIOS */
+
+    .elva-about-benefits {
+        padding: 45px 18px;
+    }
+
+    .elva-benefits-heading {
+        margin-bottom: 35px;
+    }
+
+    .elva-benefits-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .elva-benefit-card {
+        padding: 22px 15px;
+        min-height: 230px;
+    }
+
+    .elva-benefit-card h4 {
+        font-size: 18px;
+    }
+
+    .elva-benefit-card p {
+        font-size: 11px;
+    }
+
+    /* CIERRE */
+
+    .elva-about-cta {
+        margin-top: 70px;
+    }
+
+    .elva-about-button {
+        padding: 15px 18px;
+        font-size: 10px;
+    }
+
+    /* VIDEO */
+
+    .elva-about-video {
+        height: 420px;
+    }
+
+    /* DIVISORIA */
+
+    .elva-section-divider {
+        margin: 55px auto;
+        gap: 15px;
+    }
+}
+
+/* =========================================
+   MÓVILES PEQUEÑOS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .elva-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .elva-about-image {
+        height: 360px;
+    }
+
+    .elva-about-video {
+        height: 360px;
+    }
+}
+
+
+
+/*-----------------------------------------------------------------------------------------------------*/
+
+/* =========================================
+   ELVA BEAUTY ACADEMY - HERO
+   DISEÑO ORIGINAL + CORRECCIÓN RESPONSIVE
+========================================= */
+
+.hero-title-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+    position: relative;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-top: 10px;
+    padding: 20px 0 45px;
+}
+
+.editorial-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(55px, 12vw, 190px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+}
+
+.editorial-title > span {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.art-highlight {
+    display: inline-block;
+
+    background: linear-gradient(
+        110deg,
+        #e9a6d3 0%,
+        #ffffff 18%,
+        #a9c9ff 35%,
+        #d99bdf 52%,
+        #ffffff 68%,
+        #8ebeff 82%,
+        #f2b4d8 100%
+    );
+
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 5px 12px rgba(180, 145, 255, 0.25));
+
+    -webkit-box-reflect: below -8px linear-gradient(
+        transparent 25%,
+        rgba(255, 255, 255, 0.16)
+    );
+
+    animation: iridescent-shine 5s ease-in-out infinite alternate;
+}
+
+@keyframes iridescent-shine {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+/* =========================================
+   HEADER TEXT
+========================================= */
+
+.header-top-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+}
+
+/* =========================================
+   HERO BADGE
+========================================= */
+
+.hero-badge-container {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.scroll-arrow-btn {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(196, 165, 130, .65);
+    border-radius: 50%;
+
+    color: var(--color-champagne);
+    transition: var(--transition);
+}
+
+.scroll-arrow-btn:hover {
+    background: var(--color-champagne);
+    color: var(--color-dark);
+    transform: translateY(4px);
+}
+
+.avatar-wrapper {
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--color-champagne);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.badge-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .85);
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+    max-width: 470px;
+    margin-top: 10px;
+    color: rgba(255,255,255,.78);
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 2;
+    letter-spacing: .3px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 48px;
+}
+
+.button {
+    min-height: 57px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 24px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    transition: var(--transition);
+}
+
+.button-primary {
+    background: var(--color-champagne);
+    color: var(--color-dark);
+}
+
+.button-primary:hover {
+    background: var(--color-ivory);
+    transform: translateY(-4px);
+}
+
+.button-icon {
+    font-size: 19px;
+}
+
+.button-secondary {
+    color: var(--color-ivory);
+    border-bottom: 1px solid rgba(255,255,255,.4);
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 45px;
+}
+
+.button-secondary:hover {
+    color: var(--color-champagne);
+    border-color: var(--color-champagne);
+}
+
+/* =========================================
+   HERO BOTTOM
+========================================= */
+
+.hero-bottom {
+    position: absolute;
+    bottom: 65px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.23);
+    padding-top: 10px;
+}
+
+.hero-bottom-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-number {
+    color: var(--color-champagne);
+    font-family: var(--font-title);
+    font-size: 24px;
+}
+
+.hero-bottom-text {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.hero-bottom-center {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.7);
+}
+
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color-ivory);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.scroll-arrow {
+    font-size: 20px;
+    color: var(--color-champagne);
+    animation: scrollDown 1.6s infinite;
+}
+
+@keyframes scrollDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+/* =========================================
+   DECORATION
+========================================= */
+
+.hero-decoration {
+    position: absolute;
+    z-index: 2;
+    top: 48%;
+    right: 4%;
+    transform: rotate(90deg);
+    transform-origin: right;
+    color: rgba(255,255,255,.6);
+    font-size: 8px;
+    letter-spacing: 4px;
+}
+
+.hero-vertical-text {
+    position: absolute;
+    right: 4%;
+    bottom: 160px;
+    writing-mode: vertical-rl;
+    z-index: 2;
+    font-size: 8px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,.55);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: revealUp 1s cubic-bezier(.2,.7,.3,1) forwards;
+}
+
+.hero-eyebrow {
+    animation-delay: .3s;
+}
+
+.hero-title {
+    animation: revealUp 1.2s .45s both;
+}
+
+.hero-description {
+    animation-delay: .7s;
+}
+
+.hero-actions {
+    animation-delay: .9s;
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-placeholder {
+    min-height: 1px;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .navigation {
+        gap: 20px;
+    }
+
+    .header-container {
+        width: 94%;
+    }
+
+    .hero-container {
+        width: 90%;
+    }
+
+    .hero-title {
+        font-size: clamp(105px, 15vw, 155px);
+    }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    .header {
+        height: 80px;
+    }
+
+    .header.scrolled {
+        height: 70px;
+    }
+
+    .brand-name {
+        font-size: 34px;
+    }
+
+    .brand-subtitle {
+        font-size: 7px;
+    }
+
+    .header-cta {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 1002;
+    }
+
+    .navigation {
+        position: fixed;
+        inset: 0;
+        z-index: 1001;
+        background: var(--color-dark);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 35px;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: var(--transition);
+    }
+
+    .navigation.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .nav-link {
+        font-family: var(--font-title);
+        font-size: 34px;
+        color: var(--color-ivory);
+    }
+
+    .hero {
+        min-height: 760px;
+        height: 100svh;
+    }
+
+    .hero-image {
+        object-position: 62% center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                90deg,
+                rgba(24,19,17,.82),
+                rgba(24,19,17,.48)
+            ),
+            linear-gradient(
+                0deg,
+                rgba(24,19,17,.55),
+                transparent 65%
+            );
+    }
+
+    .hero-container {
+        width: 88%;
+        padding-top: 250px;
+    }
+
+    .hero-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+        gap: 9px;
+    }
+
+    .eyebrow-line {
+        width: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(76px, 16vw, 125px);
+    }
+
+    .title-italic {
+        margin: 20px 0;
+    }
+
+    .hero-description {
+        max-width: 340px;
+        font-size: 12px;
+        margin-top: 35px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .button-primary {
+        min-height: 53px;
+        padding: 0 16px;
+        font-size: 8px;
+    }
+
+    .button-secondary {
+        font-size: 8px;
+    }
+
+    .hero-bottom {
+        bottom: 50px;
+        padding-top: 17px;
+    }
+
+    .hero-bottom-center,
+    .hero-vertical-text,
+    .hero-decoration {
+        display: none;
+    }
+
+    .scroll-indicator {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    /* CORRECCIÓN DEL TÍTULO EDITORIAL */
+
+    .hero-container {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-title-container {
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 20px 5px 30px;
+    }
+
+    .editorial-title {
+        width: 100%;
+        font-size: clamp(42px, 16vw, 95px);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        align-items: center;
+        text-align: center;
+        margin: 0;
+        transform: none;
+    }
+
+    .editorial-title > span {
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .art-highlight {
+        line-height: 1.12;
+        padding-bottom: 5px;
+        -webkit-box-reflect: none;
+    }
+
+    .hero-badge-container {
+        gap: 12px;
+        width: 100%;
+        margin: 20px auto 0;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .scroll-arrow-btn,
+    .avatar-wrapper {
+        width: 38px;
+        height: 38px;
+    }
+
+    .badge-text-content {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media screen and (max-width: 400px) {
+
+    .hero-title {
+        font-size: 86px;
+    }
+
+    .hero-description {
+        font-size: 11px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+    }
+
+    .button {
+        letter-spacing: 1px;
+    }
+
+    .editorial-title {
+        font-size: clamp(36px, 11.5vw, 48px);
+        line-height: 1.12;
+    }
+
+    .hero-title-container {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------------------------------*/
+
+
+/* =========================*/
+
+
+/* =========================================
+   ELVA BEAUTY ACADEMY — SECCIÓN DE CURSOS
+========================================= */
+
+.courses-section {
+    position: relative;
+    width: 100%;
+    min-height: 850px;
+    padding: 100px 20px 70px;
+    overflow: hidden;
+    background: #f8f6f2;
+    
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.courses-heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+     margin-top: 150px
+}
+
+.courses-eyebrow {
+    display: block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #a18b75;
+    margin-bottom: 20px;
+}
+
+.courses-heading h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(42px, 6vw, 85px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: #1c1c1c;
+    margin: 0;
+}
+
+.courses-heading h2 span {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.courses-heading p {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* =========================================
+   CARRUSEL 3D
+========================================= */
+
+.wrapper {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: 1200px;
+    position: relative;
+    margin-top: 20px;
+}
+
+.inner {
+    --w: 220px;
+    --h: 320px;
+    --translateZ: 350px;
+
+    position: relative;
+    width: var(--w);
+    height: var(--h);
+    transform-style: preserve-3d;
+    animation: rotating 30s linear infinite;
+}
+
+.inner:hover {
+    animation-play-state: paused;
+}
+
+/* TARJETAS */
+
+.card {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transform:
+        rotateY(calc(var(--index) * (360deg / var(--quantity))))
+        translateZ(var(--translateZ));
+
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.card .img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f6f2;
+}
+
+.card .img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .img img {
+    transform: scale(1.03);
+}
+
+
+
+/* =========================================
+   ANIMACIÓN
+========================================= */
+
+@keyframes rotating {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+/* =========================================
+   PIE DE SECCIÓN
+========================================= */
+
+.courses-footer {
+    max-width: 1100px;
+    margin: 20px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.15);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: #777;
+}
+
+.courses-footer p {
+    text-align: center;
+    margin: 0;
+}
+
+/* =========================================
+   MODAL DE CURSOS
+========================================= */
+
+.course-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.course-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* FONDO OSCURO */
+
+.course-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 16, 13, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+/* CONTENEDOR */
+
+.course-modal-box {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    width: 100%;
+    max-width: 900px;
+    max-height: 90vh;
+
+    overflow: auto;
+    background: #f8f6f2;
+
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.course-modal.active .course-modal-box {
+    transform: translateY(0);
+}
+
+/* IMAGEN */
+
+.course-modal-image {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.course-modal-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-label {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+
+    color: #fff;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+/* BOTÓN CERRAR */
+
+.course-modal-close {
+    position: absolute;
+    z-index: 5;
+    top: 15px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #211c19;
+    color: #fff;
+
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.course-modal-close:hover {
+    background: #a18b75;
+    transform: rotate(90deg);
+}
+
+/* CONTENIDO */
+
+.course-modal-content {
+    padding: 55px 40px;
+}
+
+.modal-eyebrow {
+    color: #a18b75;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+}
+
+/* TÍTULO */
+
+.course-modal-content h2 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 1.1;
+
+    margin: 20px 0;
+
+    color: #211c19;
+}
+
+/* DESCRIPCIÓN */
+
+.course-modal-content p {
+    color: #777;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* DURACIÓN Y MODALIDAD */
+
+.modal-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+
+    margin: 30px 0;
+    padding: 20px 0;
+
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-details span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: #a18b75;
+}
+
+.modal-details strong {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #211c19;
+}
+
+/* PROGRAMA */
+
+.modal-course-program h3 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #211c19;
+    margin-bottom: 12px;
+}
+
+/* BOTÓN DE CONTACTO */
+
+.modal-contact-button {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    margin-top: 25px;
+    padding: 16px 22px;
+
+    background: #211c19;
+    color: #fff;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.modal-contact-button:hover {
+    background: #a18b75;
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   RESPONSIVE — TABLETS Y MÓVILES
+========================================= */
+
+@media (max-width: 768px) {
+
+    .courses-section {
+        min-height: 700px;
+        padding: 75px 15px 40px;
+    }
+
+    .wrapper {
+        height: 430px;
+    }
+
+    .inner {
+        --w: 160px;
+        --h: 235px;
+        --translateZ: 250px;
+    }
+
+    .courses-heading h2 {
+        font-size: clamp(38px, 10vw, 58px);
+    }
+
+    .courses-heading p {
+        font-size: 12px;
+    }
+
+    .courses-footer {
+        gap: 10px;
+        font-size: 9px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE — PANTALLAS PEQUEÑAS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .course-modal {
+        padding: 12px;
+    }
+
+    .course-modal-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        max-height: 92vh;
+    }
+
+    .course-modal-image {
+        min-height: 230px;
+        max-height: 260px;
+    }
+
+    .course-modal-content {
+        padding: 30px 25px;
+    }
+
+    .course-modal-content h2 {
+        font-size: 34px;
+    }
+
+    .modal-details {
+        gap: 25px;
+    }
+
+    .modal-contact-button {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .inner {
+        animation: none;
+    }
+
+    .card,
+    .card .img img,
+    .course-modal,
+    .course-modal-box,
+    .modal-contact-button {
+        transition: none;
+    }
+}
+
+/* =========================================
+   ELVA — ANIMACIÓN DE ENTRADA AL SCROLL
+========================================= */
+
+.courses-heading,
+#curso .wrapper {
+    opacity: 0;
+    transform: translateY(55px);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.courses-heading.show,
+#curso .wrapper.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Aparición escalonada */
+
+.courses-heading .courses-eyebrow {
+    display: block;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.1s;
+}
+
+.courses-heading h2 {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.9s ease 0.3s;
+}
+
+.courses-heading p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.9s ease 0.5s;
+}
+
+.courses-heading.show .courses-eyebrow,
+.courses-heading.show h2,
+.courses-heading.show p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#curso .wrapper {
+    transition-delay: 0.25s;
+}
+
+/* Accesibilidad */
+
+@media (prefers-reduced-motion: reduce) {
+    .courses-heading,
+    .courses-heading *,
+    #curso .wrapper {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+
+
+
+
+
+/* =========================================
+   ELVA — GALERÍA
+========================================= */
+
+.elva-gallery {
+    position: relative;
+    width: 100%;
+    padding: 120px 7% 100px;
+    background: #E8DCD2; /* NUEVO COLOR */
+    overflow: clip;
+}
+
+/* ENCABEZADO */
+
+.gallery-heading {
+    max-width: 900px;
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+.gallery-eyebrow {
+    display: block;
+    margin-bottom: 25px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #a18b75;
+}
+
+.gallery-heading h2 {
+    margin: 0;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(42px, 7vw, 90px);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    color: #211c19;
+}
+
+.gallery-heading h2 span {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.gallery-heading p {
+    margin-top: 25px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    color: #777;
+}
+
+/* GRID DE DOS COLUMNAS */
+
+.gallery-grid {
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7%;
+    align-items: start;
+}
+
+/* COLUMNAS */
+
+.gallery-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* DESPLAZAMIENTO DE LA SEGUNDA COLUMNA */
+
+.gallery-column:nth-child(2) {
+    padding-top: 230px;
+}
+
+/* TARJETAS */
+
+.gallery-item {
+    position: sticky;
+    top: 100px;
+
+    width: 100%;
+    height: 520px;
+
+    margin: 0 0 180px;
+
+    overflow: hidden;
+    background: #e9e3dc;
+
+    border: 1px solid rgba(161, 139, 117, 0.2);
+
+    box-shadow: 0 15px 45px rgba(33, 28, 25, 0.10);
+
+    z-index: var(--i);
+
+    transition:
+        box-shadow 0.5s ease,
+        transform 0.5s ease;
+}
+
+/* IMÁGENES */
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+/* EFECTO HOVER */
+
+.gallery-item:hover {
+    box-shadow: 0 25px 65px rgba(33, 28, 25, 0.2);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+/* TEXTO SOBRE LA IMAGEN */
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 25px 20px 18px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+
+    color: #fff;
+
+    background: linear-gradient(
+        transparent,
+        rgba(20, 16, 13, 0.65)
+    );
+}
+
+/* PIE DE GALERÍA */
+
+.gallery-footer {
+    max-width: 1250px;
+    margin: 30px auto 0;
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(0,0,0,0.15);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: #8b8177;
+}
+
+.gallery-footer p {
+    margin: 0;
+    text-align: center;
+}
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+========================================= */
+
+.gallery-heading,
+.gallery-column {
+    opacity: 0;
+    transform: translateY(60px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.22, 1, .36, 1);
+}
+
+.gallery-heading.gallery-visible,
+.gallery-column.gallery-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-column:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .elva-gallery {
+        padding: 85px 18px 60px;
+    }
+
+    .gallery-heading {
+        margin-bottom: 60px;
+    }
+
+    .gallery-grid {
+        gap: 15px;
+    }
+
+    .gallery-column:nth-child(2) {
+        padding-top: 110px;
+    }
+
+    .gallery-item {
+        height: 340px;
+        top: 80px;
+        margin-bottom: 100px;
+    }
+
+    .gallery-item figcaption {
+        font-size: 8px;
+        padding: 18px 10px 12px;
+    }
+
+    .gallery-footer {
+        flex-wrap: wrap;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .gallery-grid {
+        gap: 10px;
+    }
+
+    .gallery-column:nth-child(2) {
+        padding-top: 90px;
+    }
+
+    .gallery-item {
+        height: 260px;
+        top: 70px;
+        margin-bottom: 75px;
+    }
+
+    .gallery-heading h2 {
+        font-size: 39px;
+    }
+
+    .gallery-heading p {
+        font-size: 11px;
+    }
+
+    .gallery-footer p {
+        width: 100%;
+        order: 3;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-heading,
+    .gallery-column,
+    .gallery-item,
+    .gallery-item img {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+
+/*-----------------------------------------*/
+
+
+/* =========================================
+   ELVA BEAUTY ACADEMY — CONTACTO
+========================================= */
+
+/* =========================================
+   ELVA BEAUTY ACADEMY — CONTACTO
+========================================= */
+
+.elva-contact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #211c19;
+    isolation: isolate;
+}
+
+/* =========================================
+   IMAGEN DE FONDO
+========================================= */
+
+.contact-background {
+    position: absolute;
+    inset: -5%;
+
+    background-image: url('../assets/img/4K.jpg');
+    background-size: cover;
+    background-position: center 45%;
+    background-repeat: no-repeat;
+
+    /* ESTADO INICIAL */
+    opacity: 0;
+    transform: scale(1.18);
+
+    /* ANIMACIÓN */
+    transition:
+        opacity 2.2s ease,
+        transform 3.5s cubic-bezier(.16, 1, .3, 1);
+
+    z-index: -2;
+}
+
+/* IMAGEN VISIBLE */
+
+.elva-contact.contact-visible .contact-background {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* =========================================
+   CAPA OSCURA
+========================================= */
+
+.contact-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        180deg,
+        rgba(20, 16, 14, 0.72),
+        rgba(20, 16, 14, 0.58) 45%,
+        rgba(20, 16, 14, 0.82)
+    );
+
+    opacity: 0;
+
+    transition: opacity 2s ease 0.5s;
+
+    z-index: -1;
+}
+
+.elva-contact.contact-visible .contact-overlay {
+    opacity: 1;
+}
+
+/* =========================================
+   CONTENIDO CENTRAL
+========================================= */
+
+.contact-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 850px;
+
+    text-align: center;
+    padding: 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   ESTADO INICIAL DE ELEMENTOS
+========================================= */
+
+.contact-eyebrow,
+.contact-title,
+.contact-description,
+.contact-button,
+.contact-footer-text {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.4s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* =========================================
+   ETIQUETA SUPERIOR
+========================================= */
+
+.contact-eyebrow {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+
+    letter-spacing: 0.38em;
+    color: #c4a582;
+
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   LÍNEA DECORATIVA
+========================================= */
+
+.contact-line {
+    width: 1px;
+    height: 65px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        #c4a582
+    );
+
+    margin-bottom: 35px;
+
+    transform: scaleY(0);
+    transform-origin: top;
+
+    transition: transform 1.2s cubic-bezier(.16, 1, .3, 1);
+}
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.contact-title {
+    margin: 0;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(48px, 8vw, 105px);
+    font-weight: 500;
+
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+
+    color: #f8f2eb;
+}
+
+.contact-title span {
+    display: block;
+    margin-top: 12px;
+
+    font-style: italic;
+    font-weight: 400;
+    color: #c4a582;
+}
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.contact-description {
+    max-width: 490px;
+
+    margin: 32px auto 40px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+    line-height: 1.9;
+    letter-spacing: 0.055em;
+
+    color: rgba(248, 242, 235, 0.78);
+}
+
+/* =========================================
+   BOTÓN
+========================================= */
+
+.contact-button {
+    position: relative;
+
+    width: 205px;
+    min-height: 58px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid rgba(196, 165, 130, 0.2);
+    border-radius: 50px;
+
+    background: rgba(80, 61, 45, 0.72);
+
+    color: #d7b9a3;
+    text-decoration: none;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+
+    overflow: hidden;
+}
+
+.contact-button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: #c4a582;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
+    z-index: -1;
+}
+
+.contact-button:hover::before {
+    transform: scaleX(1);
+}
+
+.contact-button:hover {
+    color: #211c19;
+    border-color: #c4a582;
+}
+
+.contact-arrow {
+    font-family: sans-serif;
+    font-size: 17px;
+
+    transition: transform 0.4s ease;
+}
+
+.contact-button:hover .contact-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* =========================================
+   TEXTO INFERIOR
+========================================= */
+
+.contact-footer-text {
+    margin-top: 75px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 8px;
+    font-weight: 500;
+
+    letter-spacing: 0.3em;
+    color: rgba(248, 242, 235, 0.55);
+}
+
+/* =========================================
+   NUMERACIÓN
+========================================= */
+
+.contact-index {
+    position: absolute;
+    bottom: 35px;
+    right: 7%;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+
+    color: rgba(248, 242, 235, 0.5);
+}
+
+/* =========================================
+   ANIMACIÓN AL LLEGAR CON SCROLL
+========================================= */
+
+/* ETIQUETA */
+
+.elva-contact.contact-visible .contact-eyebrow {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+}
+
+/* LÍNEA */
+
+.elva-contact.contact-visible .contact-line {
+    transform: scaleY(1);
+    transition-delay: 1s;
+}
+
+/* TÍTULO */
+
+.elva-contact.contact-visible .contact-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.3s;
+}
+
+/* DESCRIPCIÓN */
+
+.elva-contact.contact-visible .contact-description {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.7s;
+}
+
+/* BOTÓN */
+
+.elva-contact.contact-visible .contact-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 2s;
+}
+
+/* TEXTO INFERIOR */
+
+.elva-contact.contact-visible .contact-footer-text {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 2.3s;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .elva-contact {
+        min-height: 90vh;
+        min-height: 90svh;
+    }
+
+    .contact-background {
+        background-position: 58% center;
+    }
+
+    .contact-content {
+        width: 100%;
+        padding: 90px 25px;
+    }
+
+    .contact-eyebrow {
+        font-size: 9px;
+        letter-spacing: 0.28em;
+    }
+
+    .contact-line {
+        height: 48px;
+    }
+
+    .contact-title {
+        font-size: clamp(43px, 11vw, 70px);
+    }
+
+    .contact-description {
+        max-width: 340px;
+        font-size: 12px;
+    }
+
+    .contact-footer-text {
+        font-size: 7px;
+        letter-spacing: 0.2em;
+        margin-top: 60px;
+    }
+
+    .contact-index {
+        right: 25px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .contact-title {
+        font-size: 43px;
+    }
+
+    .contact-button {
+        width: 190px;
+        min-height: 54px;
+    }
+
+    .contact-description {
+        margin-top: 25px;
+        margin-bottom: 32px;
+    }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contact-background,
+    .contact-overlay,
+    .contact-content *,
+    .contact-line,
+    .contact-button {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .contact-background,
+    .contact-overlay,
+    .contact-eyebrow,
+    .contact-title,
+    .contact-description,
+    .contact-button,
+    .contact-footer-text {
+        opacity: 1;
+    }
+}
+
+/* =========================================*/
+
+/* =========================================
+   ELVA BEAUTY ACADEMY — FOOTER
+========================================= */
+
+.elva-footer {
+    position: relative;
+    width: 100%;
+    padding: 90px 7% 30px;
+
+    background: #211c19;
+    color: #f8f2eb;
+
+    overflow: hidden;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+.footer-main {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.3fr 1fr;
+    gap: 55px;
+
+    padding-bottom: 85px;
+}
+
+/* MARCA */
+
+.footer-brand {
+    max-width: 350px;
+}
+
+.footer-eyebrow {
+    display: block;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+
+    letter-spacing: 0.3em;
+    color: #c4a582;
+
+    margin-bottom: 20px;
+}
+
+.footer-brand h2 {
+    margin: 0;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(55px, 6vw, 85px);
+    font-weight: 500;
+
+    letter-spacing: -0.07em;
+    line-height: 0.9;
+
+    color: #f8f2eb;
+}
+
+.footer-brand h2 span {
+    color: #c4a582;
+}
+
+.footer-brand p {
+    max-width: 280px;
+    margin-top: 25px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.9;
+
+    letter-spacing: 0.04em;
+    color: rgba(248, 242, 235, 0.55);
+}
+
+/* COLUMNAS */
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.footer-column h3 {
+    margin: 5px 0 15px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 0.25em;
+    color: #c4a582;
+}
+
+/* ENLACES */
+
+.footer-column a {
+    position: relative;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.025em;
+    color: rgba(248, 242, 235, 0.65);
+
+    text-decoration: none;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+.footer-column a:hover {
+    color: #c4a582;
+    transform: translateX(5px);
+}
+
+/* FRASE EDITORIAL */
+
+.footer-statement {
+    width: 100%;
+    padding: 35px 0 40px;
+
+    border-top: 1px solid rgba(196, 165, 130, 0.18);
+
+    text-align: center;
+}
+
+.footer-statement span {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(35px, 8vw, 105px);
+    font-weight: 400;
+    font-style: italic;
+
+    letter-spacing: -0.04em;
+    color: rgba(196, 165, 130, 0.22);
+}
+
+/* BARRA INFERIOR */
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(196, 165, 130, 0.18);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+
+    color: rgba(248, 242, 235, 0.45);
+}
+
+/* VOLVER ARRIBA */
+
+.footer-back-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.17em;
+
+    color: #c4a582;
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-back-top span {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(196, 165, 130, 0.35);
+    border-radius: 50%;
+
+    font-size: 16px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.footer-back-top:hover span {
+    background: #c4a582;
+    color: #211c19;
+    transform: translateY(-4px);
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 55px 35px;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+    .elva-footer {
+        padding: 75px 25px 25px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px 20px;
+
+        padding-bottom: 60px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand h2 {
+        font-size: 70px;
+    }
+
+    .footer-brand p {
+        max-width: 290px;
+    }
+
+    .footer-column {
+        gap: 16px;
+    }
+
+    .footer-column h3 {
+        font-size: 8px;
+    }
+
+    .footer-column a {
+        font-size: 11px;
+    }
+
+    .footer-statement {
+        padding: 30px 0;
+    }
+
+    .footer-statement span {
+        font-size: 39px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .footer-bottom p {
+        font-size: 7px;
+        line-height: 1.8;
+    }
+
+}
+/*---Paginas Legales*/
+
+
+/* =========================================
+   ELVA BEAUTY ACADEMY - PAGINAS LEGALES
+=
+/* =========================================
+   ELVA - FOOTER LEGAL COMPACTO
+========================================= */
+
+.elva-legal-footer {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    border-top: 1px solid rgba(196, 165, 130, .18);
+}
+
+.elva-legal-title span {
+    color: #c4a582;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.elva-legal-title p {
+    margin: 8px 0 0;
+    color: rgba(248, 242, 235, .55);
+    font-family: 'Bodoni Moda', serif;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.elva-legal-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 25px;
+}
+
+.elva-legal-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 0;
+    border: none;
+    color: rgba(248, 242, 235, .65);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: .2px;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.elva-legal-nav a:first-child {
+    border: none;
+}
+
+.elva-legal-nav a > span:first-child {
+    color: #c4a582;
+    font-size: 9px;
+}
+
+.elva-legal-nav .legal-arrow {
+    display: none;
+}
+
+.elva-legal-nav a:hover {
+    color: #c4a582;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .elva-legal-footer {
+        padding: 25px 12px;
+        gap: 15px;
+    }
+
+    .elva-legal-title p {
+        font-size: 15px;
+    }
+
+    .elva-legal-nav {
+        gap: 8px 16px;
+    }
+
+    .elva-legal-nav a {
+        font-size: 9px;
+    }
+}
+/* =========================================
+   ELVA - FOOTER LEGAL MOBILE
+========================================= */
+
+@media screen and (max-width: 600px) {
+
+    .elva-legal-footer {
+        width: 100%;
+        max-width: 100%;
+        padding: 22px 15px 25px;
+        margin: 0 auto;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .elva-legal-title span {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+    }
+
+    .elva-legal-title p {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-top: 6px;
+    }
+
+    .elva-legal-nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px 14px;
+    }
+
+    .elva-legal-nav a {
+        font-size: 9px;
+        padding: 4px 0;
+        white-space: nowrap;
+    }
+
+    .elva-legal-nav a > span:first-child {
+        font-size: 8px;
+    }
+
+}/* =========================================
+   ELVA - FOOTER FORZADO PARA CELULARES
+========================================= */
+
+@media only screen and (max-width: 600px) {
+
+    .elva-legal-footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 20px 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        gap: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    .elva-legal-title {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .elva-legal-title span {
+        font-size: 8px !important;
+    }
+
+    .elva-legal-title p {
+        font-size: 14px !important;
+        margin: 6px 0 0 !important;
+    }
+
+    .elva-legal-nav {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px 12px !important;
+    }
+
+    .elva-legal-nav a {
+        font-size: 9px !important;
+        padding: 4px 0 !important;
+        white-space: normal !important;
+    }
+}
+
+/* LEGAL PAGES */
+
+.legal-page {
+    min-height: 100vh;
+    background: var(--color-ivory);
+    color: var(--color-dark);
+}
+
+.legal-header {
+    width: 100%;
+    min-height: 76px;
+    padding: 18px max(24px, calc((100% - 1080px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--color-dark);
+    color: var(--color-ivory);
+}
+
+.legal-brand {
+    font-family: var(--font-title);
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.legal-brand span {
+    color: var(--color-champagne);
+}
+
+.legal-back {
+    color: var(--color-nude);
+    font-size: 13px;
+    transition: color .2s ease;
+}
+
+.legal-back:hover,
+.legal-section a:hover {
+    color: var(--color-gold);
+}
+
+.legal-hero {
+    padding: 82px 24px 72px;
+    text-align: center;
+    background: var(--color-dark);
+    color: var(--color-ivory);
+}
+
+.legal-eyebrow {
+    color: var(--color-champagne);
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.legal-hero h1 {
+    margin: 18px 0;
+    font-family: var(--font-title);
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+.legal-hero p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: var(--color-nude);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.legal-content {
+    width: min(100% - 48px, 760px);
+    margin: 0 auto;
+    padding: 52px 0 64px;
+}
+
+.legal-updated {
+    margin-bottom: 32px;
+    color: #76695f;
+    font-size: 12px;
+}
+
+.legal-section {
+    padding: 26px 0;
+    border-top: 1px solid rgba(33, 28, 25, .14);
+}
+
+.legal-section h2 {
+    margin-bottom: 14px;
+    color: var(--color-dark);
+    font-family: var(--font-title);
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.legal-section p {
+    margin: 0 0 12px;
+    color: #554b44;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section a {
+    color: #8b6948;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-footer {
+    padding: 25px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    background: var(--color-dark);
+    color: var(--color-nude);
+    font-size: 12px;
+}
+
+.legal-footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+}
+
+.legal-footer-links a:hover {
+    color: var(--color-champagne);
+}
+
+@media (max-width: 600px) {
+    .legal-header {
+        min-height: 64px;
+        padding: 15px 18px;
+    }
+
+    .legal-brand {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
+    .legal-back {
+        font-size: 12px;
+    }
+
+    .legal-hero {
+        padding: 62px 20px 54px;
+    }
+
+    .legal-eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .legal-hero p {
+        font-size: 14px;
+    }
+
+    .legal-content {
+        width: calc(100% - 36px);
+        padding: 36px 0 44px;
+    }
+
+    .legal-section {
+        padding: 22px 0;
+    }
+
+    .legal-section h2 {
+        font-size: 25px;
+    }
+
+    .legal-section p {
+        font-size: 13px;
+    }
+
+    .legal-footer {
+        padding: 22px 18px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .legal-footer-links {
+        gap: 10px 16px;
+    }
+}
