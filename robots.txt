@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://nexowebpy.github.io/ELVA-Makeup-Academy/sitemap.xml
